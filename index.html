@@ -14,47 +14,80 @@
     />
   </head>
   <body>
-    <section class="hero is-info">
+    <section class="hero is-info is-small">
       <div class="hero-body">
         <p class="title">youtube-dl zoom link generator</p>
         <p class="subtitle">Enter in the following details</p>
       </div>
     </section>
-    <div class="columns is-centered">
-      <div class="column is-half-desktop m-6">
-        <div class="field">
-          <label class="label">File Name</label>
-          <div class="control">
-            <input id="file-name" class="input" type="text" placeholder="Text input" />
-          </div>
-        </div>
+    <div class="container pt-3">
+      <div class="columns">
+        <div class="column">
+          <form action="">
+            <div class="field">
+              <label class="label">File Name</label>
+              <div class="control">
+                <input id="file-name" class="input" type="text" placeholder="my-saved-vid.mp4" />
+              </div>
+            </div>
 
-        <div class="field">
-          <label class="label">Cookie Header</label>
-          <div class="control">
-            <textarea id="cookie-header" class="textarea" placeholder="Textarea"></textarea>
-          </div>
-        </div>
+            <div class="field">
+              <label class="label">File URL</label>
+              <div class="control">
+                <textarea id="file-url" class="textarea" placeholder="Textarea"></textarea>
+              </div>
+            </div>
 
-        <div class="field">
-          <label class="label">File Link</label>
-          <div class="control">
-            <textarea id="file-link" class="textarea" placeholder="Textarea"></textarea>
-          </div>
-        </div>
+            <div class="field">
+              <label class="label">Cookie Header</label>
+              <div class="control">
+                <textarea id="cookie-header" class="textarea" placeholder="Textarea"></textarea>
+              </div>
+            </div>
 
-        <div class="field is-grouped">
-          <div class="control">
-            <button id="generate" class="button is-link">Generate</button>
-          </div>
+            <div class="field is-grouped">
+              <div class="control">
+                <button id="generate" class="button is-link">Generate</button>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">youtube-dl command</label>
+              <div class="control">
+                <textarea id="terminal-cmd" class="textarea" placeholder="Textarea"></textarea>
+              </div>
+            </div>
+          </form>
         </div>
-        <div class="field">
-          <label class="label">youtube-dl command</label>
-          <div class="control">
-            <textarea id="file-link" class="textarea" placeholder="Textarea"></textarea>
-          </div>
+        <div class="column">
+          <h2 class="title is-4 mb-1">Install youtube-dl cli tool</h2>
+          <p>
+            Follow installation instructions here:
+            <a href="https://github.com/ytdl-org/youtube-dl/">https://github.com/ytdl-org/youtube-dl/</a>
+          </p>
+          <br />
+          <h2 class="title is-4 mb-1">File Name</h2>
+          <p>Enter the filename you would like with a .mp4 suffix</p>
+          <br />
+          <h2 class="title is-4 mb-1">How to get File URL</h2>
+          <p>
+            Goto the zoom video replay with the network panel of dev tools open and search by mp4 to get the network
+            request for the video. In this example it is the top request with Content-Type: video/mp4.
+          </p>
+          <br />
+          <img width="100%" src="./assets/screenshots/dev-tools.png" alt="" />
+          <br />
+          <p>On the right side of the dev tools window/pane copy the request URL and paste into the File URL box.</p>
+          <img src="./assets/screenshots/req-url.png" alt="" />
+          <br />
+          <h2 class="title is-4 mb-1">How to get Cookie</h2>
+          <p>
+            Below the Request URL, go down to Request Header and copy the cookie and paste into the Cookie Header Box
+          </p>
+          <img src="./assets/screenshots/cookie.png" alt="" />
+          <h2 class="title is-4 is-centered mb-1">Hit Generate and paste the command into your terminal!</h2>
         </div>
       </div>
     </div>
+    <script src="./assets/app.js"></script>
   </body>
 </html>
