@@ -23,25 +23,35 @@
     <div class="columns is-centered">
       <div class="column is-half-desktop m-6">
         <div class="field">
-          <label class="label">FileName</label>
+          <label class="label">File Name</label>
           <div class="control">
-            <input class="input" type="text" placeholder="Text input" />
+            <input id="file-name" class="input" type="text" placeholder="Text input" />
           </div>
         </div>
 
         <div class="field">
           <label class="label">Cookie Header</label>
           <div class="control">
-            <textarea class="textarea" placeholder="Textarea"></textarea>
+            <textarea id="cookie-header" class="textarea" placeholder="Textarea"></textarea>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">File Link</label>
+          <div class="control">
+            <textarea id="file-link" class="textarea" placeholder="Textarea"></textarea>
           </div>
         </div>
 
         <div class="field is-grouped">
           <div class="control">
-            <button class="button is-link">Submit</button>
+            <button id="generate" class="button is-link">Generate</button>
           </div>
+        </div>
+        <div class="field">
+          <label class="label">youtube-dl command</label>
           <div class="control">
-            <button class="button is-link is-light">Cancel</button>
+            <textarea id="file-link" class="textarea" placeholder="Textarea"></textarea>
           </div>
         </div>
       </div>
