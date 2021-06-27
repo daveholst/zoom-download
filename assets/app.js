@@ -1,5 +1,6 @@
 
-const generateBtn = document.querySelector('#generate')
+const generateBtn = document.querySelector('#generate');
+const copyBtn = document.querySelector('#copy');
 
 generateBtn.addEventListener('click', (event => {
   event.preventDefault();
@@ -11,3 +12,12 @@ generateBtn.addEventListener('click', (event => {
   console.log('click');
   terminalCmd.value = `youtube-dl -o ${fileName} --referer "https://zoom.us/" --add-header "Cookie:${cookieHeader}" ${fileURL}`
 }))
+
+copyBtn.addEventListener('click', event => {
+  event.preventDefault();
+  const terminalCmd = document.querySelector('#terminal-cmd')
+  terminalCmd.select();
+  terminalCmd.setSelectionRange(0, 99999);
+  document.execCommand("copy")
+})
+
